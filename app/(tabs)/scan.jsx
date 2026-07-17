@@ -156,8 +156,8 @@ export default function ScanScreen() {
 
         <View style={styles.bottomSection}>
           
-          <Text style={styles.instructionTitle}>Point your camera</Text>
-          <Text style={styles.instructionSubtitle}>Align the herb within the viewfinder</Text>
+          <Text style={styles.instructionTitle}>Arahkan kamera</Text>
+          <Text style={styles.instructionSubtitle}>Letakkan tanaman dalam bingkai</Text>
 
           <View style={styles.shutterRow}>
             
@@ -173,7 +173,7 @@ export default function ScanScreen() {
               style={[styles.shutterButtonOuter, loading && { opacity: 0.5 }]}
               activeOpacity={0.7}
               onPress={takePicture}
-              disabled={loading || !!imageUri} // <-- PERBAIKANNYA DI SINI
+              disabled={loading || !!imageUri} 
             >
               <View style={styles.shutterButtonInner} />
             </TouchableOpacity>

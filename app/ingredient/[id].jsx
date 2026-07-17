@@ -64,7 +64,7 @@ export default function IngredientProfile() {
           {ingredient.verified && (
             <View style={styles.verifiedBadge}>
               <Ionicons name="checkmark-circle" size={13} color="#2F5233" />
-              <Text style={styles.verifiedText}>Heritage Verified</Text>
+              <Text style={styles.verifiedText}>Rempah Terverifikasi</Text>
             </View>
           )}
 
@@ -77,7 +77,7 @@ export default function IngredientProfile() {
             <View style={styles.sectionIconBox}>
               <Ionicons name="medical" size={16} color="#C05D36" />
             </View>
-            <Text style={styles.sectionTitle}>Health Benefits</Text>
+            <Text style={styles.sectionTitle}>Manfaat Kesehatan</Text>
           </View>
 
           <View style={styles.spotlightCard}>
@@ -109,7 +109,7 @@ export default function IngredientProfile() {
             <View style={styles.sectionIconBox}>
               <Ionicons name="flask" size={16} color="#C05D36" />
             </View>
-            <Text style={styles.sectionTitle}>Proper Dosage</Text>
+            <Text style={styles.sectionTitle}>Dosis yang Sesuai</Text>
           </View>
           <View style={styles.dosageCard}>
             <Ionicons name="information-circle-outline" size={18} color="#8E8E8E" />
@@ -117,12 +117,12 @@ export default function IngredientProfile() {
           </View>
 
           <View style={styles.recipesHeaderRow}>
-            <Text style={[styles.sectionTitle, { marginLeft: 0 }]}>Recommended{'\n'}Recipes</Text>
+            <Text style={[styles.sectionTitle, { marginLeft: 0 }]}>Resep{'\n'}Rekomendasi</Text>
             <TouchableOpacity
               style={styles.viewAllButton}
               onPress={() => router.push('/(tabs)/recipes')}
             >
-              <Text style={styles.viewAllText}>View All</Text>
+              <Text style={styles.viewAllText}>Lihat Semua</Text>
             </TouchableOpacity>
           </View>
 
@@ -160,17 +160,17 @@ export default function IngredientProfile() {
             activeOpacity={0.8}
           >
             <Text style={styles.dropdownText}>
-              {showMore ? 'See Less' : 'See More (Traditions & Science)'}
+              {showMore ? 'Lihat Lebih Sedikit' : 'Lihat Lebih Banyak (Tradisi & Ilmu)'}
             </Text>
             <Ionicons name={showMore ? 'chevron-up' : 'chevron-down'} size={20} color="#6B5D4F" />
           </TouchableOpacity>
 
           {showMore && (
             <View style={styles.extraInfo}>
-              <Text style={styles.extraSectionTitle}>Cultural Tradition</Text>
+              <Text style={styles.extraSectionTitle}>Tradisi Budaya</Text>
               <Text style={styles.detailedText}>{ingredient.traditions}</Text>
 
-              <Text style={styles.extraSectionTitle}>Scientific Facts</Text>
+              <Text style={styles.extraSectionTitle}>Fakta Ilmiah</Text>
               <Text style={styles.detailedText}>{ingredient.science}</Text>
             </View>
           )}

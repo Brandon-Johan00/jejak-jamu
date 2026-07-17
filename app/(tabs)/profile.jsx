@@ -23,9 +23,6 @@ export default function ProfileScreen() {
       <ScrollView contentContainerStyle={styles.scrollContainer} showsVerticalScrollIndicator={false}>
 
         <View style={styles.headerRow}>
-          <TouchableOpacity>
-            <Ionicons name="menu-outline" size={28} color="#333" />
-          </TouchableOpacity>
           <Text style={styles.logoText}>Jejak Jamu</Text>
           <Image
             source={{ uri: 'https://randomuser.me/api/portraits/men/32.jpg' }}
@@ -35,7 +32,7 @@ export default function ProfileScreen() {
 
         <View style={styles.pageTitleRow}>
           <Ionicons name="person-outline" size={20} color="#C05D36" />
-          <Text style={styles.pageTitle}>Profile & Library</Text>
+          <Text style={styles.pageTitle}>Profil & Perpustakaan</Text>
         </View>
 
         {/* --- Kartu Profil --- */}
@@ -60,13 +57,13 @@ export default function ProfileScreen() {
 
         <View style={styles.sectionHeader}>
           <Ionicons name="heart" size={18} color="#E85D75" />
-          <Text style={styles.sectionTitle}>SAVED REMEDIES ({savedRecipes.length})</Text>
+          <Text style={styles.sectionTitle}>RESEP YANG DISIMPAN ({savedRecipes.length})</Text>
         </View>
 
         {savedRecipes.length === 0 ? (
           <View style={styles.emptyStateCard}>
-            <Text style={styles.emptyStateTitle}>No saved recipes yet.</Text>
-            <Text style={styles.emptyStateSub}>Tap the Heart icon on any recipe to save it for easy access.</Text>
+            <Text style={styles.emptyStateTitle}>Belum ada resep yang disimpan.</Text>
+            <Text style={styles.emptyStateSub}>Tekan ikon Hati pada setiap resep untuk menyimpannya.</Text>
           </View>
         ) : (
           <View style={styles.savedList}>
@@ -99,9 +96,9 @@ export default function ProfileScreen() {
         <View style={styles.sectionHeader}>
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <Ionicons name="book-outline" size={18} color="#C05D36" />
-            <Text style={styles.sectionTitle}>BOTANICAL HERB DICTIONARY</Text>
+            <Text style={styles.sectionTitle}>DIKTIONSARI TUMBUHAN</Text>
           </View>
-          <Text style={styles.discoveryText}>{discoveredIds.length} / {allIngredients.length} Discovered</Text>
+          <Text style={styles.discoveryText}>{discoveredIds.length} / {allIngredients.length} Ditemukan</Text>
         </View>
 
         {/* Grid Container */}
