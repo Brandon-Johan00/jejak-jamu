@@ -1,0 +1,182 @@
+[
+  {
+    "id": "kunyit",
+    "name": "Kunyit",
+    "englishName": "Turmeric",
+    "latinName": "Curcuma longa",
+    "image": "https://images.alodokter.com/dk0z4ums3/image/upload/v1777014325/attached_image/kunyit.jpg",
+    "verified": true,
+    "tags": ["Anti-inflammatory", "Antioxidant"],
+    "spotlightTitle": "The Power of Curcumin",
+    "spotlightText": "Potent anti-inflammatory compound that rivals pharmacological options without side effects.",
+    "benefits": [
+      { "icon": "body-outline", "color": "green", "title": "Brain Health", "text": "Boosts BDNF levels for cognitive health." },
+      { "icon": "heart-outline", "color": "red", "title": "Heart Support", "text": "Improves blood pressure regulation." }
+    ],
+    "dosage": "400–600 mg curcumin extract per day, or 1 ruas jari kunyit segar direbus menjadi jamu.",
+    "traditions": "Dipakai sejak lama di lingkungan Keraton Yogyakarta dan Solo sebagai jamu kecantikan dan kesehatan para putri keraton, biasanya dalam bentuk jamu kunyit asam.",
+    "science": "Kandungan kurkumin telah diteliti memiliki efek anti-inflamasi yang sebanding dengan beberapa obat NSAID pada studi skala kecil, meski penyerapannya rendah dan biasanya ditingkatkan dengan tambahan piperin dari lada hitam."
+  },
+  {
+    "id": "jahe",
+    "name": "Jahe",
+    "englishName": "Ginger",
+    "latinName": "Zingiber officinale",
+    "image": "https://images.alodokter.com/dk0z4ums3/image/upload/v1777014325/attached_image/jahe.jpg",
+    "verified": true,
+    "tags": ["Warming", "Anti-nausea"],
+    "spotlightTitle": "The Warmth of Gingerol",
+    "spotlightText": "A warming rhizome that eases nausea and colds while supporting circulation.",
+    "benefits": [
+      { "icon": "restaurant-outline", "color": "orange", "title": "Digestive Aid", "text": "Eases nausea and settles the stomach." },
+      { "icon": "shield-checkmark-outline", "color": "teal", "title": "Immune Boost", "text": "Supports the body's defenses against colds." }
+    ],
+    "dosage": "1–3 g jahe segar per hari (sekitar 3–5 iris tipis diseduh air panas).",
+    "traditions": "Wedang jahe disajikan turun-temurun di musim hujan di seluruh Jawa sebagai ritual penghangat tubuh setelah beraktivitas di luar.",
+    "science": "Senyawa gingerol terbukti dalam beberapa studi dapat meredakan mual setara dengan obat anti-mual tertentu, serta membantu menurunkan penanda peradangan dalam tubuh."
+  },
+  {
+    "id": "temulawak",
+    "name": "Temulawak",
+    "englishName": "Javanese Turmeric",
+    "latinName": "Curcuma zanthorrhiza",
+    "image": "https://images.alodokter.com/dk0z4ums3/image/upload/v1777014325/attached_image/temulawak.jpg",
+    "verified": true,
+    "tags": ["Liver Health", "Appetite"],
+    "spotlightTitle": "A Liver-Loving Rhizome",
+    "spotlightText": "A larger cousin of turmeric, traditionally used as a liver tonic and appetite booster.",
+    "benefits": [
+      { "icon": "water-outline", "color": "green", "title": "Liver Support", "text": "Supports healthy liver detoxification." },
+      { "icon": "restaurant-outline", "color": "orange", "title": "Appetite Boost", "text": "Traditionally used to stimulate appetite." }
+    ],
+    "dosage": "2–4 g rimpang kering per hari, direbus menjadi teh.",
+    "traditions": "Sejak lama digunakan di rumah tangga Jawa sebagai tonik pemulihan setelah sakit, terutama untuk mengembalikan nafsu makan anak-anak.",
+    "science": "Kandungan kurkuminoid pada temulawak diteliti memiliki efek hepatoprotektif dan dapat merangsang produksi empedu yang membantu pencernaan lemak."
+  },
+  {
+    "id": "kencur",
+    "name": "Kencur",
+    "englishName": "Aromatic Ginger",
+    "latinName": "Kaempferia galanga",
+    "image": "https://images.alodokter.com/dk0z4ums3/image/upload/v1777856715/attached_image/kencur.jpg",
+    "verified": true,
+    "tags": ["Energy", "Cough Relief"],
+    "spotlightTitle": "Beras Kencur's Secret",
+    "spotlightText": "Base of beras kencur, a sweet-spicy tonic traditionally used for energy and coughs.",
+    "benefits": [
+      { "icon": "flash-outline", "color": "orange", "title": "Stamina Boost", "text": "Traditionally used to relieve fatigue." },
+      { "icon": "medkit-outline", "color": "teal", "title": "Cough Relief", "text": "Soothes cough and sore throat." }
+    ],
+    "dosage": "Sekitar 5 g rimpang segar per hari, biasanya diblender langsung ke dalam beras kencur.",
+    "traditions": "Beras kencur adalah minuman pagi favorit buruh dan petani Jawa untuk mengembalikan stamina sebelum bekerja seharian.",
+    "science": "Senyawa etil para-metoksisinamat pada kencur diteliti memiliki potensi anti-inflamasi dan pereda batuk ringan."
+  },
+  {
+    "id": "sambiloto",
+    "name": "Sambiloto",
+    "englishName": "King of Bitters",
+    "latinName": "Andrographis paniculata",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThCykbl0aZNSDnofrdhRH0KVP8jdbMBGBvb6AwIFJcRA&s=10",
+    "verified": false,
+    "tags": ["Immune Support", "Blood Sugar"],
+    "spotlightTitle": "Bitterness with Benefits",
+    "spotlightText": "A famously bitter herb used to manage fevers, infections, and support blood sugar control.",
+    "benefits": [
+      { "icon": "thermometer-outline", "color": "red", "title": "Fever Relief", "text": "Traditionally used to help reduce fever." },
+      { "icon": "pulse-outline", "color": "blue", "title": "Blood Sugar Support", "text": "May help support healthy blood sugar levels." }
+    ],
+    "dosage": "1–2 g daun kering per hari sebagai teh; sangat pahit, sering dicampur madu.",
+    "traditions": "Jamu pahit yang dulu diberikan untuk menurunkan demam anak-anak, kini lebih umum dikonsumsi orang dewasa karena rasanya yang sangat kuat.",
+    "science": "Senyawa andrografolid diteliti memiliki efek modulasi imun serta potensi menurunkan kadar gula darah secara ringan."
+  },
+  {
+    "id": "daun-sirih",
+    "name": "Daun Sirih",
+    "englishName": "Betel Leaf",
+    "latinName": "Piper betle",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8BHegDfQ0ya6XzyTDbVIwbjS4x9MbhnVYIQsZ42yKkA&s=10",
+    "verified": false,
+    "tags": ["Antiseptic", "Oral Care"],
+    "spotlightTitle": "Nature's Antiseptic Leaf",
+    "spotlightText": "A traditional antiseptic leaf used for oral hygiene and minor wound care.",
+    "benefits": [
+      { "icon": "happy-outline", "color": "teal", "title": "Oral Health", "text": "Traditionally used to freshen breath and gums." },
+      { "icon": "bandage-outline", "color": "green", "title": "Wound Care", "text": "Traditionally applied to minor cuts." }
+    ],
+    "dosage": "2–3 lembar daun diseduh air panas untuk kumur atau basuh luar; umumnya tidak diminum dalam jumlah besar.",
+    "traditions": "Dikunyah para nenek dulu (\"menginang\") dipercaya untuk menjaga kekuatan gusi dan gigi hingga usia lanjut.",
+    "science": "Minyak atsiri seperti kavikol pada daun sirih diteliti memiliki aktivitas antibakteri terhadap bakteri penyebab masalah mulut."
+  },
+  {
+    "id": "serai",
+    "name": "Serai",
+    "englishName": "Lemongrass",
+    "latinName": "Cymbopogon citratus",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7jJtrATmBInjcz8ibeRFLD01L-OSlMjEeiWXIAbmIww&s",
+    "verified": true,
+    "tags": ["Digestive", "Calming"],
+    "spotlightTitle": "The Calming Aromatic",
+    "spotlightText": "An aromatic grass used in teas to calm digestion and ease cold symptoms.",
+    "benefits": [
+      { "icon": "restaurant-outline", "color": "orange", "title": "Digestive Comfort", "text": "Soothes an upset, bloated stomach." },
+      { "icon": "moon-outline", "color": "purple", "title": "Relaxation", "text": "Calming aroma that eases tension." }
+    ],
+    "dosage": "1–2 batang, dimemarkan dan diseduh air panas, 1–2 kali sehari.",
+    "traditions": "Serai adalah bahan aromatik yang hampir selalu ditambahkan ke wedang untuk aroma menenangkan sebelum tidur.",
+    "science": "Senyawa sitral pada serai diteliti memiliki efek menenangkan ringan serta sifat antimikroba."
+  },
+  {
+    "id": "kayu-manis",
+    "name": "Kayu Manis",
+    "englishName": "Cinnamon",
+    "latinName": "Cinnamomum verum",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCj_d6sqyBtNOrbCFqYuhGBjUyI0nJxJ7qEU1PaymJ-A&s=10",
+    "verified": false,
+    "tags": ["Blood Sugar", "Warming"],
+    "spotlightTitle": "Sweet Spice, Steady Sugar",
+    "spotlightText": "A warming spice traditionally used to help balance blood sugar and warm the body.",
+    "benefits": [
+      { "icon": "pulse-outline", "color": "blue", "title": "Blood Sugar Support", "text": "May help improve insulin sensitivity." },
+      { "icon": "flame-outline", "color": "orange", "title": "Warms The Body", "text": "Traditionally used on cold evenings." }
+    ],
+    "dosage": "1–2 g (sekitar 1/2 sdt) bubuk kayu manis per hari, diseduh air panas.",
+    "traditions": "Ditambahkan ke minuman hangat dalam budaya teh pegunungan Jawa Barat untuk menghangatkan tubuh di malam yang sejuk.",
+    "science": "Sinamaldehida pada kayu manis diteliti dapat membantu meningkatkan sensitivitas insulin pada beberapa uji klinis skala kecil."
+  },
+  {
+    "id": "jinten-hitam",
+    "name": "Jinten Hitam",
+    "englishName": "Black Cumin",
+    "latinName": "Nigella sativa",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ56umbepMI_-8q4ZG46UgtYA3eGSHqp2nrPhO2eNxBLw&s=10",
+    "verified": false,
+    "tags": ["Immune Support", "Respiratory"],
+    "spotlightTitle": "A Seed of Wellness",
+    "spotlightText": "A small seed with a long history of traditional use for immunity and respiratory comfort.",
+    "benefits": [
+      { "icon": "shield-checkmark-outline", "color": "teal", "title": "Immune Boost", "text": "Traditionally used to support daily wellness." },
+      { "icon": "medkit-outline", "color": "blue", "title": "Respiratory Support", "text": "Traditionally used to ease minor coughs." }
+    ],
+    "dosage": "1/2–1 sdt biji atau minyak per hari, dicampur madu atau air hangat.",
+    "traditions": "Berakar pada praktik herbal yang dipengaruhi budaya Islam di Indonesia, dikenal luas di kalangan pesantren sebagai suplemen kesehatan harian.",
+    "science": "Senyawa timokuinon pada jinten hitam diteliti memiliki aktivitas antioksidan dan anti-inflamasi."
+  },
+  {
+    "id": "brotowali",
+    "name": "Brotowali",
+    "englishName": "Tinospora",
+    "latinName": "Tinospora crispa",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAVX5kCWel8si-an3ne0wpEym6_GWWeEEEWrjJmfF6Tg&s=10",
+    "verified": false,
+    "tags": ["Blood Sugar", "Detox"],
+    "spotlightTitle": "The Bitterest Tonic",
+    "spotlightText": "One of the most bitter jamu herbs, traditionally taken for stamina and blood sugar support.",
+    "benefits": [
+      { "icon": "pulse-outline", "color": "blue", "title": "Blood Sugar Support", "text": "Traditionally used to help manage blood sugar." },
+      { "icon": "leaf-outline", "color": "green", "title": "Detox Support", "text": "Traditionally used as a body-cleansing tonic." }
+    ],
+    "dosage": "5–10 g batang kering per hari, direbus; mulai dari jumlah kecil karena rasanya sangat pahit.",
+    "traditions": "Salah satu jamu paling pahit, secara historis diminum sebagai tonik ketahanan tubuh dan vitalitas.",
+    "science": "Senyawa alkaloid dan terpenoid pada brotowali diteliti memiliki potensi regulasi gula darah dan efek antioksidan."
+  }
+]
