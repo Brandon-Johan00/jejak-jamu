@@ -1,0 +1,44 @@
+[
+  {
+    "id": "kunyit",
+    "name": "Kunyit",
+    "latinName": "Curcuma longa",
+    "image": "https://images.unsplash.com/photo-1615485500704-8e990f9900f7",
+    "description": "Rimpang kuning yang jadi bahan dasar jamu paling umum di Indonesia. Punya sifat anti-inflamasi dan sering dipakai untuk jamu kunyit asam.",
+    "traditionalUse": [
+      "Melancarkan pencernaan",
+      "Meredakan nyeri haid",
+      "Anti-inflamasi ringan"
+    ],
+    "dosageCaution": "Hindari konsumsi berlebihan bagi penderita batu empedu atau yang sedang mengonsumsi obat pengencer darah.",
+    "recipe": "Jamu Kunyit Asam: rebus kunyit parut dengan air asam jawa dan gula aren, saring, minum hangat."
+  },
+  {
+    "id": "jahe",
+    "name": "Jahe",
+    "latinName": "Zingiber officinale",
+    "image": "https://images.unsplash.com/photo-1599909533633-96e1e3d69a76",
+    "description": "Rimpang pedas dan hangat, salah satu bahan jamu paling populer untuk menghangatkan badan.",
+    "traditionalUse": [
+      "Menghangatkan tubuh",
+      "Meredakan mual",
+      "Meningkatkan stamina"
+    ],
+    "dosageCaution": "Konsumsi berlebihan dapat menyebabkan iritasi lambung pada beberapa orang.",
+    "recipe": "Wedang Jahe: geprek jahe, rebus dengan air, tambahkan gula merah dan sedikit serai."
+  },
+  {
+    "id": "temulawak",
+    "name": "Temulawak",
+    "latinName": "Curcuma zanthorrhiza",
+    "image": "https://images.unsplash.com/photo-1615485925600-97237c4fc1ea",
+    "description": "Rimpang mirip kunyit tapi lebih besar dan pahit, dikenal baik untuk kesehatan hati.",
+    "traditionalUse": [
+      "Menjaga kesehatan hati",
+      "Meningkatkan nafsu makan",
+      "Membantu pencernaan"
+    ],
+    "dosageCaution": "Sebaiknya tidak dikonsumsi rutin dalam dosis tinggi tanpa pengawasan, terutama oleh ibu hamil.",
+    "recipe": "Jamu Temulawak: rebus irisan temulawak dengan gula aren dan daun pandan hingga wangi."
+  }
+]
