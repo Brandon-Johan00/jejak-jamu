@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, SafeAreaView } from 'react-native';
+import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
-import { colors } from "../../theme/theme"; 
-
-const herbData = [
-  { id: '1', name: 'Kunyit (Turmeric)', sci: 'Curcuma longa', image: 'https://images.alodokter.com/dk0z4ums3/image/upload/v1777014325/attached_image/kunyit.jpg' },
-  { id: '2', name: 'Jahe (Ginger)', sci: 'Zingiber officinale', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSt4nCdG1BPiSvuexC281YxekCdqEjNys2PLZUnVk-Lg&s=10' },
-  { id: '3', name: 'Serai (Lemongrass)', sci: 'Cymbopogon citratus', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7jJtrATmBInjcz8ibeRFLD01L-OSlMjEeiWXIAbmIww&s' },
-  { id: '4', name: 'Kencur (Sand Ginger)', sci: 'Kaempferia galanga', image: 'https://images.alodokter.com/dk0z4ums3/image/upload/v1777856715/attached_image/kencur.jpg' },
-];
+import { colors } from "../../theme/theme";
+import { useAppData } from '../../context/AppDataContext';
+import { getAllIngredients } from '../../utils/ingredients';
+import { getRecipeById } from '../../utils/recipes';
 
 export default function ProfileScreen() {
+  const router = useRouter();
+  const { savedRecipeIds, toggleSavedRecipe, discoveredIds, isDiscovered } = useAppData();
+
+  const allIngredients = useMemo(() => getAllIngredients(), []);
+
+  const savedRecipes = useMemo(
+    () => savedRecipeIds.map((id) => getRecipeById(id)).filter(Boolean),
+    [savedRecipeIds]
+  );
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.scrollContainer} showsVerticalScrollIndicator={false}>
@@ -20,9 +27,9 @@ export default function ProfileScreen() {
             <Ionicons name="menu-outline" size={28} color="#333" />
           </TouchableOpacity>
           <Text style={styles.logoText}>Jejak Jamu</Text>
-          <Image 
-            source={{ uri: 'https://randomuser.me/api/portraits/men/32.jpg' }} 
-            style={styles.headerAvatar} 
+          <Image
+            source={{ uri: 'https://randomuser.me/api/portraits/men/32.jpg' }}
+            style={styles.headerAvatar}
           />
         </View>
 
@@ -34,16 +41,15 @@ export default function ProfileScreen() {
         {/* --- Kartu Profil --- */}
         <View style={styles.profileCard}>
           <View style={styles.avatarContainer}>
-            <Image 
-              source={{ uri: 'https://randomuser.me/api/portraits/men/32.jpg' }} 
-              style={styles.mainAvatar} 
+            <Image
+              source={{ uri: 'https://randomuser.me/api/portraits/men/32.jpg' }}
+              style={styles.mainAvatar}
             />
-            {/* Tombol sync/refresh kecil di pojok avatar */}
             <View style={styles.syncBadge}>
               <Ionicons name="sync-outline" size={14} color="#FFF" />
             </View>
           </View>
-          
+
           <View style={styles.nameRow}>
             <Text style={styles.profileName}>Gede Arisanto</Text>
             <Ionicons name="pencil-outline" size={16} color="#8E8E8E" style={{ marginLeft: 5 }} />
@@ -54,33 +60,86 @@ export default function ProfileScreen() {
 
         <View style={styles.sectionHeader}>
           <Ionicons name="heart" size={18} color="#E85D75" />
-          <Text style={styles.sectionTitle}>SAVED REMEDIES (0)</Text>
+          <Text style={styles.sectionTitle}>SAVED REMEDIES ({savedRecipes.length})</Text>
         </View>
-        <View style={styles.emptyStateCard}>
-          <Text style={styles.emptyStateTitle}>No saved recipes yet.</Text>
-          <Text style={styles.emptyStateSub}>Tap the Heart icon on any recipe to save it for easy access.</Text>
-        </View>
+
+        {savedRecipes.length === 0 ? (
+          <View style={styles.emptyStateCard}>
+            <Text style={styles.emptyStateTitle}>No saved recipes yet.</Text>
+            <Text style={styles.emptyStateSub}>Tap the Heart icon on any recipe to save it for easy access.</Text>
+          </View>
+        ) : (
+          <View style={styles.savedList}>
+            {savedRecipes.map((recipe) => (
+              <TouchableOpacity
+                key={recipe.id}
+                style={styles.savedCard}
+                activeOpacity={0.85}
+                onPress={() => router.push(`/recipe/${recipe.id}`)}
+              >
+                <Image source={{ uri: recipe.image }} style={styles.savedImage} />
+                <View style={styles.savedInfo}>
+                  <Text style={styles.savedTitle} numberOfLines={1}>{recipe.name}</Text>
+                  <Text style={styles.savedSubtitle} numberOfLines={1}>{recipe.benefits?.[0]}</Text>
+                </View>
+                <TouchableOpacity
+                  onPress={(e) => {
+                    e.stopPropagation?.();
+                    toggleSavedRecipe(recipe.id);
+                  }}
+                  hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+                >
+                  <Ionicons name="heart" size={20} color="#E85D75" />
+                </TouchableOpacity>
+              </TouchableOpacity>
+            ))}
+          </View>
+        )}
 
         <View style={styles.sectionHeader}>
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <Ionicons name="book-outline" size={18} color="#C05D36" />
             <Text style={styles.sectionTitle}>BOTANICAL HERB DICTIONARY</Text>
           </View>
-          <Text style={styles.discoveryText}>6 / 6 Discovered</Text>
+          <Text style={styles.discoveryText}>{discoveredIds.length} / {allIngredients.length} Discovered</Text>
         </View>
 
         {/* Grid Container */}
         <View style={styles.gridContainer}>
-          {herbData.map((herb) => (
-            <TouchableOpacity key={herb.id} style={styles.herbCard} activeOpacity={0.8}>
-              <Image source={{ uri: herb.image }} style={styles.herbImage} />
-              <View style={styles.herbInfo}>
-                <Text style={styles.herbName} numberOfLines={1}>{herb.name}</Text>
-                <Text style={styles.herbSci} numberOfLines={1}>{herb.sci}</Text>
-                <Text style={styles.readProfileText}>Read Profile</Text>
-              </View>
-            </TouchableOpacity>
-          ))}
+          {allIngredients.map((herb) => {
+            const discovered = isDiscovered(herb.id);
+            return (
+              <TouchableOpacity
+                key={herb.id}
+                style={styles.herbCard}
+                activeOpacity={0.8}
+                onPress={() => router.push(`/ingredient/${herb.id}`)}
+              >
+                <View style={styles.herbImageWrapper}>
+                  <Image
+                    source={{ uri: herb.image }}
+                    style={[styles.herbImage, !discovered && styles.herbImageLocked]}
+                  />
+                  {!discovered && (
+                    <View style={styles.lockOverlay}>
+                      <Ionicons name="lock-closed" size={20} color="#FFFFFF" />
+                    </View>
+                  )}
+                </View>
+                <View style={styles.herbInfo}>
+                  <Text style={styles.herbName} numberOfLines={1}>
+                    {discovered ? herb.name : '???'}
+                  </Text>
+                  <Text style={styles.herbSci} numberOfLines={1}>
+                    {discovered ? herb.latinName : 'Belum ditemukan'}
+                  </Text>
+                  <Text style={styles.readProfileText}>
+                    {discovered ? 'Read Profile' : 'Tap to Discover'}
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            );
+          })}
         </View>
 
       </ScrollView>
@@ -91,12 +150,12 @@ export default function ProfileScreen() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#FDFBF7', 
+    backgroundColor: '#FDFBF7',
   },
   scrollContainer: {
     paddingHorizontal: 20,
     paddingTop: 10,
-    paddingBottom: 110, 
+    paddingBottom: 110,
   },
   headerRow: {
     flexDirection: 'row',
@@ -107,7 +166,7 @@ const styles = StyleSheet.create({
   logoText: {
     fontSize: 18,
     fontWeight: '900',
-    color: '#C05D36', 
+    color: '#C05D36',
   },
   headerAvatar: {
     width: 32,
@@ -197,7 +256,7 @@ const styles = StyleSheet.create({
   emptyStateCard: {
     borderWidth: 1.5,
     borderColor: '#E5E5E5',
-    borderStyle: 'dashed', // Membuat border putus-putus
+    borderStyle: 'dashed',
     borderRadius: 12,
     padding: 25,
     alignItems: 'center',
@@ -214,14 +273,52 @@ const styles = StyleSheet.create({
     color: '#999',
     textAlign: 'center',
   },
+
+  savedList: {
+    gap: 10,
+    marginBottom: 25,
+  },
+  savedCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#FFF',
+    borderRadius: 14,
+    padding: 8,
+    gap: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.05,
+    shadowRadius: 5,
+    elevation: 1,
+  },
+  savedImage: {
+    width: 56,
+    height: 56,
+    borderRadius: 10,
+    backgroundColor: '#F0F0F0',
+  },
+  savedInfo: {
+    flex: 1,
+  },
+  savedTitle: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 3,
+  },
+  savedSubtitle: {
+    fontSize: 12,
+    color: '#8E8E8E',
+  },
+
   gridContainer: {
     flexDirection: 'row',
-    flexWrap: 'wrap', // Memungkinkan item turun ke baris berikutnya
+    flexWrap: 'wrap',
     justifyContent: 'space-between',
   },
   herbCard: {
     backgroundColor: '#FFF',
-    width: '48%', // Mengambil hampir setengah layar
+    width: '48%',
     borderRadius: 12,
     marginBottom: 15,
     overflow: 'hidden',
@@ -231,11 +328,23 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 1,
   },
+  herbImageWrapper: {
+    position: 'relative',
+  },
   herbImage: {
     width: '100%',
     height: 100,
     backgroundColor: '#F0F0F0',
     resizeMode: 'cover',
+  },
+  herbImageLocked: {
+    opacity: 0.35,
+  },
+  lockOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(60,60,60,0.35)',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   herbInfo: {
     padding: 10,

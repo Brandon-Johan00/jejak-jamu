@@ -106,9 +106,7 @@ export default function ScanScreen() {
         return;
       }
 
-      // Pindah ke halaman detail menggunakan ID tersebut
-      router.push(`/detail/${plantId}`);
-      
+      router.push(`/ingredient/${plantId}`);
     } catch (error) {
       console.error("Classification error:", error);
       alert("Terjadi kesalahan saat mengklasifikasi gambar.");

@@ -4,6 +4,9 @@
     "plantId": "kunyit",
     "name": "Jamu Kunyit Asam",
     "description": "Resep jamu paling populer di Indonesia — segar, asam, dan sedikit pedas dari kunyit.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-frEqVBJcCc6sjA1uWKgAT09Ai81j-okr1e2O5dGNrQ&s=10",
+    "difficulty": "Mudah",
+    "diseases": ["Maag", "Nyeri Haid", "Daya Tahan Tubuh"],
     "benefits": ["Membantu detoksifikasi", "Meredakan nyeri haid", "Meningkatkan imun"],
     "servings": 4,
     "prepTimeMinutes": 15,
@@ -16,23 +19,9 @@
       { "id": "0006", "name": "jeruk nipis, peras" }
     ],
     "steps": [
-      {
-        "id": "1",
-        "title": "Rebus kunyit",
-        "content": "Rebus {0004} bersama kunyit parut ({0001}) hingga mendidih dan air berubah kuning pekat.",
-        "timerSeconds": 600
-      },
-      {
-        "id": "2",
-        "title": "Tambahkan asam dan gula",
-        "content": "Masukkan {0002} dan {0003}, aduk hingga gula larut sempurna.",
-        "timerSeconds": 300
-      },
-      {
-        "id": "3",
-        "title": "Saring dan sajikan",
-        "content": "Saring larutan, tambahkan sejumput {0005} dan perasan {0006}. Sajikan hangat atau dingin dengan es."
-      }
+      { "id": "1", "title": "Rebus kunyit", "content": "Rebus {0004} bersama kunyit parut ({0001}) hingga mendidih dan air berubah kuning pekat.", "timerSeconds": 600 },
+      { "id": "2", "title": "Tambahkan asam dan gula", "content": "Masukkan {0002} dan {0003}, aduk hingga gula larut sempurna.", "timerSeconds": 300 },
+      { "id": "3", "title": "Saring dan sajikan", "content": "Saring larutan, tambahkan sejumput {0005} dan perasan {0006}. Sajikan hangat atau dingin dengan es." }
     ]
   },
   {
@@ -40,6 +29,9 @@
     "plantId": "jahe",
     "name": "Wedang Jahe",
     "description": "Minuman jahe hangat klasik, cocok diminum saat cuaca dingin atau badan kurang fit.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKH7OjGQq8X_LLvwSxXzo61pWDWPr6UP1DR2BoQUD4Mw&s=10",
+    "difficulty": "Mudah",
+    "diseases": ["Demam", "Masuk Angin", "Mual"],
     "benefits": ["Menghangatkan tubuh", "Meredakan mual", "Membantu pencernaan"],
     "servings": 2,
     "prepTimeMinutes": 10,
@@ -51,23 +43,9 @@
       { "id": "0005", "name": "daun pandan" }
     ],
     "steps": [
-      {
-        "id": "1",
-        "title": "Rebus semua bahan",
-        "content": "Rebus {0004} bersama {0001}, {0003}, dan {0005} hingga mendidih dan aroma jahe keluar.",
-        "timerSeconds": 480
-      },
-      {
-        "id": "2",
-        "title": "Tambahkan gula",
-        "content": "Masukkan {0002}, aduk hingga larut. Kecilkan api dan biarkan mendidih pelan 2-3 menit lagi.",
-        "timerSeconds": 180
-      },
-      {
-        "id": "3",
-        "title": "Saring dan sajikan",
-        "content": "Saring, tuang ke gelas, sajikan selagi hangat."
-      }
+      { "id": "1", "title": "Rebus semua bahan", "content": "Rebus {0004} bersama {0001}, {0003}, dan {0005} hingga mendidih dan aroma jahe keluar.", "timerSeconds": 480 },
+      { "id": "2", "title": "Tambahkan gula", "content": "Masukkan {0002}, aduk hingga larut. Kecilkan api dan biarkan mendidih pelan 2-3 menit lagi.", "timerSeconds": 180 },
+      { "id": "3", "title": "Saring dan sajikan", "content": "Saring, tuang ke gelas, sajikan selagi hangat." }
     ]
   },
   {
@@ -75,6 +53,9 @@
     "plantId": "temulawak",
     "name": "Jamu Temulawak",
     "description": "Jamu pahit-manis yang dipercaya baik untuk menjaga kesehatan hati dan menambah nafsu makan.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkZy6u2PTb-wDo9p7chTYaXkTuURKO4NGfGJFJluV9cA&s=10",
+    "difficulty": "Sedang",
+    "diseases": ["Maag", "Kolesterol"],
     "benefits": ["Menjaga kesehatan hati", "Meningkatkan nafsu makan", "Membantu pencernaan"],
     "servings": 4,
     "prepTimeMinutes": 20,
@@ -86,23 +67,193 @@
       { "id": "0005", "name": "asam jawa", "amount": 20, "unit": "g" }
     ],
     "steps": [
-      {
-        "id": "1",
-        "title": "Rebus temulawak",
-        "content": "Rebus {0004} bersama irisan temulawak ({0001}) dan {0003} hingga mendidih dan wangi.",
-        "timerSeconds": 900
-      },
-      {
-        "id": "2",
-        "title": "Tambahkan pemanis",
-        "content": "Masukkan {0002} dan {0005}, aduk hingga larut, masak 5 menit lagi.",
-        "timerSeconds": 300
-      },
-      {
-        "id": "3",
-        "title": "Saring dan sajikan",
-        "content": "Saring, sajikan hangat. Bisa juga didinginkan dan disajikan dengan es."
-      }
+      { "id": "1", "title": "Rebus temulawak", "content": "Rebus {0004} bersama irisan temulawak ({0001}) dan {0003} hingga mendidih dan wangi.", "timerSeconds": 900 },
+      { "id": "2", "title": "Tambahkan pemanis", "content": "Masukkan {0002} dan {0005}, aduk hingga larut, masak 5 menit lagi.", "timerSeconds": 300 },
+      { "id": "3", "title": "Saring dan sajikan", "content": "Saring, sajikan hangat. Bisa juga didinginkan dan disajikan dengan es." }
+    ]
+  },
+  {
+    "id": "beras-kencur",
+    "plantId": "kencur",
+    "name": "Jamu Beras Kencur",
+    "description": "Jamu manis gurih dengan aroma kencur yang khas, favorit untuk mengembalikan stamina dan meredakan pegal.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxL0wN-iJjV-cc6_bZ1XefH8arQnlDyn-RLaSXL2K4Dw&s=10",
+    "difficulty": "Sedang",
+    "diseases": ["Pegal Linu", "Daya Tahan Tubuh"],
+    "benefits": ["Meredakan pegal linu", "Menambah stamina", "Menghangatkan badan"],
+    "servings": 3,
+    "prepTimeMinutes": 25,
+    "ingredients": [
+      { "id": "0001", "name": "beras, rendam 2 jam", "amount": 50, "unit": "g" },
+      { "id": "0002", "name": "kencur, dikupas", "amount": 60, "unit": "g" },
+      { "id": "0003", "name": "gula aren, sisir halus", "amount": 80, "unit": "g" },
+      { "id": "0004", "name": "asam jawa", "amount": 15, "unit": "g" },
+      { "id": "0005", "name": "air", "amount": 750, "unit": "ml" },
+      { "id": "0006", "name": "garam" }
+    ],
+    "steps": [
+      { "id": "1", "title": "Sangrai dan haluskan", "content": "Sangrai {0001} sebentar tanpa minyak, lalu blender bersama {0002} dan sedikit air hingga halus.", "timerSeconds": 300 },
+      { "id": "2", "title": "Rebus air gula", "content": "Rebus {0005} bersama {0003} dan {0004} hingga larut dan mendidih.", "timerSeconds": 480 },
+      { "id": "3", "title": "Campur dan saring", "content": "Tuang campuran beras-kencur ke air gula panas, aduk rata, saring, tambahkan {0006} secukupnya. Sajikan dingin." }
+    ]
+  },
+  {
+    "id": "sambiloto-pahitan",
+    "plantId": "sambiloto",
+    "name": "Jamu Sambiloto Pahitan",
+    "description": "Jamu pahit tradisional yang dipercaya membantu menjaga kadar gula darah dan meredakan nyeri sendi.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5fG6i0tvA2dYSqyIb012t4sziLuVVDuV2SWFklVcjFw&s=10",
+    "difficulty": "Sedang",
+    "diseases": ["Diabetes", "Asam Urat"],
+    "benefits": ["Membantu menjaga gula darah", "Meredakan nyeri sendi", "Menurunkan panas dalam"],
+    "servings": 4,
+    "prepTimeMinutes": 20,
+    "ingredients": [
+      { "id": "0001", "name": "daun sambiloto kering", "amount": 20, "unit": "g" },
+      { "id": "0002", "name": "daun pegagan kering", "amount": 15, "unit": "g" },
+      { "id": "0003", "name": "air", "amount": 800, "unit": "ml" },
+      { "id": "0004", "name": "madu (opsional)" }
+    ],
+    "steps": [
+      { "id": "1", "title": "Rebus daun", "content": "Rebus {0003} bersama {0001} dan {0002} dengan api kecil hingga air menyusut hingga separuhnya.", "timerSeconds": 1200 },
+      { "id": "2", "title": "Saring", "content": "Angkat, saring, dan biarkan sedikit hangat sebelum diminum." },
+      { "id": "3", "title": "Sajikan", "content": "Minum selagi hangat. Boleh tambahkan sedikit {0004} untuk mengurangi rasa pahit, secukupnya saja agar tetap rendah gula." }
+    ]
+  },
+  {
+    "id": "wedang-kunyit-madu-sereh",
+    "plantId": "kunyit",
+    "name": "Wedang Kunyit Madu Sereh",
+    "description": "Wedang hangat kunyit, serai, dan madu yang menenangkan tenggorokan dan meredakan gejala flu.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmdX4Lhg9Y8w8XdvCVs7Bh9BzCHK8c72CGGqaZGJacEg&s=10",
+    "difficulty": "Mudah",
+    "diseases": ["Sakit Tenggorokan", "Demam"],
+    "benefits": ["Meredakan sakit tenggorokan", "Membantu meredakan demam ringan", "Menenangkan batuk"],
+    "servings": 2,
+    "prepTimeMinutes": 12,
+    "ingredients": [
+      { "id": "0001", "name": "kunyit, memarkan", "amount": 40, "unit": "g" },
+      { "id": "0002", "name": "serai, memarkan" },
+      { "id": "0003", "name": "air", "amount": 500, "unit": "ml" },
+      { "id": "0004", "name": "madu", "amount": 2, "unit": "tbsp" },
+      { "id": "0005", "name": "jeruk nipis, peras" }
+    ],
+    "steps": [
+      { "id": "1", "title": "Rebus kunyit dan serai", "content": "Rebus {0003} bersama {0001} dan {0002} selama sekitar 8 menit hingga wangi.", "timerSeconds": 480 },
+      { "id": "2", "title": "Dinginkan sejenak", "content": "Angkat dari api dan biarkan hangat suam-suam kuku agar madu tidak rusak.", "timerSeconds": 120 },
+      { "id": "3", "title": "Tambahkan madu dan jeruk nipis", "content": "Saring, aduk rata dengan {0004} dan perasan {0005}. Sajikan hangat." }
+    ]
+  },
+  {
+    "id": "air-rebusan-sirih",
+    "plantId": "daun-sirih",
+    "name": "Air Rebusan Daun Sirih",
+    "description": "Air kumur dan basuh tradisional dari daun sirih, dipercaya menjaga kebersihan mulut dan membantu perawatan luka ringan.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO90VUjRBHB7nbtfojZdbKHIRR5-1W1gcrXsZiAL6Nfw&s=10",
+    "difficulty": "Mudah",
+    "diseases": ["Kesehatan Mulut", "Luka Ringan"],
+    "benefits": ["Membantu jaga kebersihan mulut", "Meredakan iritasi gusi", "Membantu perawatan luka ringan"],
+    "servings": 1,
+    "prepTimeMinutes": 10,
+    "ingredients": [
+      { "id": "0001", "name": "daun sirih segar", "amount": 5, "unit": "" },
+      { "id": "0002", "name": "air", "amount": 500, "unit": "ml" },
+      { "id": "0003", "name": "garam" }
+    ],
+    "steps": [
+      { "id": "1", "title": "Rebus daun sirih", "content": "Rebus {0002} bersama {0001} hingga mendidih dan air berubah kekuningan.", "timerSeconds": 600 },
+      { "id": "2", "title": "Dinginkan", "content": "Angkat dan biarkan hangat suam-suam kuku, tambahkan sejumput {0003}.", "timerSeconds": 180 },
+      { "id": "3", "title": "Gunakan sesuai kebutuhan", "content": "Saring, gunakan sebagai air kumur atau untuk membasuh area kulit yang teriritasi ringan." }
+    ]
+  },
+  {
+    "id": "teh-serai-hangat",
+    "plantId": "serai",
+    "name": "Teh Serai Hangat",
+    "description": "Teh aromatik yang menenangkan perut kembung dan pikiran yang lelah.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3mgXLozJW3IZyXdmz2xINTvw0pr99ZRuSoYxlrN2LPw&s=10",
+    "difficulty": "Mudah",
+    "diseases": ["Kembung", "Stres Ringan"],
+    "benefits": ["Menenangkan perut kembung", "Meredakan stres ringan", "Aromanya menenangkan pikiran"],
+    "servings": 2,
+    "prepTimeMinutes": 10,
+    "ingredients": [
+      { "id": "0001", "name": "serai, digeprek", "amount": 2, "unit": "" },
+      { "id": "0002", "name": "air", "amount": 500, "unit": "ml" },
+      { "id": "0003", "name": "madu", "amount": 1, "unit": "tbsp" },
+      { "id": "0004", "name": "jeruk nipis, peras" }
+    ],
+    "steps": [
+      { "id": "1", "title": "Rebus serai", "content": "Rebus {0002} bersama {0001} hingga mendidih dan wangi.", "timerSeconds": 480 },
+      { "id": "2", "title": "Saring", "content": "Angkat, saring, dan biarkan sedikit hangat." },
+      { "id": "3", "title": "Tambahkan pelengkap", "content": "Aduk rata dengan {0003} dan perasan {0004}. Sajikan hangat." }
+    ]
+  },
+  {
+    "id": "wedang-kayu-manis",
+    "plantId": "kayu-manis",
+    "name": "Wedang Kayu Manis",
+    "description": "Minuman hangat beraroma kayu manis yang membantu menjaga kadar gula darah.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLlVOM4xGAOCoWNk-qx79yGVTF1XCJ9XzW1vVG83BRjA&s=10",
+    "difficulty": "Mudah",
+    "diseases": ["Diabetes", "Masuk Angin"],
+    "benefits": ["Membantu menjaga gula darah", "Menghangatkan tubuh", "Aroma menenangkan"],
+    "servings": 2,
+    "prepTimeMinutes": 10,
+    "ingredients": [
+      { "id": "0001", "name": "kayu manis batang", "amount": 5, "unit": "g" },
+      { "id": "0002", "name": "air", "amount": 500, "unit": "ml" },
+      { "id": "0003", "name": "madu", "amount": 1, "unit": "tbsp" },
+      { "id": "0004", "name": "jahe, diiris" }
+    ],
+    "steps": [
+      { "id": "1", "title": "Rebus kayu manis", "content": "Rebus {0002} bersama {0001} dan {0004} hingga wangi dan air agak kecokelatan.", "timerSeconds": 600 },
+      { "id": "2", "title": "Saring", "content": "Angkat, saring, dan biarkan hangat suam-suam kuku.", "timerSeconds": 120 },
+      { "id": "3", "title": "Tambahkan madu", "content": "Aduk rata dengan {0003}. Sajikan hangat." }
+    ]
+  },
+  {
+    "id": "minuman-jinten-hitam",
+    "plantId": "jinten-hitam",
+    "name": "Minuman Jinten Hitam Madu",
+    "description": "Minuman sederhana untuk menjaga daya tahan tubuh sehari-hari.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH7J3mQsuwHp8C1P_6zlja8T-dPz3mUMdSgX4669pebQ&s=10",
+    "difficulty": "Mudah",
+    "diseases": ["Daya Tahan Tubuh", "Batuk"],
+    "benefits": ["Meningkatkan imun", "Meredakan batuk ringan", "Sumber antioksidan"],
+    "servings": 1,
+    "prepTimeMinutes": 5,
+    "ingredients": [
+      { "id": "0001", "name": "jinten hitam bubuk", "amount": 0.5, "unit": "tsp" },
+      { "id": "0002", "name": "air hangat", "amount": 200, "unit": "ml" },
+      { "id": "0003", "name": "madu", "amount": 1, "unit": "tbsp" }
+    ],
+    "steps": [
+      { "id": "1", "title": "Campurkan", "content": "Campurkan {0001} ke dalam {0002}, aduk rata." },
+      { "id": "2", "title": "Tambahkan madu", "content": "Tambahkan {0003}, aduk kembali hingga larut." },
+      { "id": "3", "title": "Sajikan", "content": "Minum selagi hangat, sebaiknya di pagi hari." }
+    ]
+  },
+  {
+    "id": "jamu-brotowali",
+    "plantId": "brotowali",
+    "name": "Jamu Brotowali",
+    "description": "Jamu sangat pahit yang secara tradisional dipercaya menjaga stamina dan kadar gula darah.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQbNSkCKgpzgn4VS9s9Wpcjkk9lJRnBjy46b_g4H8I_w&s=10",
+    "difficulty": "Sulit",
+    "diseases": ["Diabetes", "Pegal Linu"],
+    "benefits": ["Membantu menjaga gula darah", "Meredakan pegal linu", "Meningkatkan stamina"],
+    "servings": 3,
+    "prepTimeMinutes": 20,
+    "ingredients": [
+      { "id": "0001", "name": "batang brotowali, dipotong", "amount": 10, "unit": "g" },
+      { "id": "0002", "name": "air", "amount": 750, "unit": "ml" },
+      { "id": "0003", "name": "madu (opsional)" }
+    ],
+    "steps": [
+      { "id": "1", "title": "Rebus batang brotowali", "content": "Rebus {0002} bersama {0001} dengan api kecil hingga air menyusut sedikit.", "timerSeconds": 900 },
+      { "id": "2", "title": "Saring", "content": "Angkat dan saring, biarkan sedikit hangat." },
+      { "id": "3", "title": "Sajikan", "content": "Minum selagi hangat. Boleh tambahkan sedikit {0003} secukupnya untuk mengurangi rasa pahit." }
     ]
   }
 ]

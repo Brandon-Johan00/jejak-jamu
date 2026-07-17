@@ -16,3 +16,40 @@ export function getRecipeById(recipeId) {
 export function getAllRecipes() {
   return recipes;
 }
+
+/**
+ * Daftar semua kategori penyakit/keluhan unik, terurut alfabetis.
+ * Dipakai untuk membangun chip filter di halaman Resep.
+ */
+export function getAllDiseases() {
+  const set = new Set();
+  recipes.forEach((recipe) => {
+    (recipe.diseases ?? []).forEach((disease) => set.add(disease));
+  });
+  return Array.from(set).sort();
+}
+
+/**
+ * Filter resep berdasarkan kategori penyakit (opsional) dan kata kunci
+ * pencarian (opsional, dicocokkan ke nama, deskripsi, dan benefit resep).
+ */
+export function searchRecipes({ disease = null, query = "" } = {}) {
+  const q = query.trim().toLowerCase();
+
+  return recipes.filter((recipe) => {
+    const matchesDisease = !disease || (recipe.diseases ?? []).includes(disease);
+
+    if (!q) return matchesDisease;
+
+    const haystack = [
+      recipe.name,
+      recipe.description,
+      ...(recipe.benefits ?? []),
+      ...(recipe.diseases ?? []),
+    ]
+      .join(" ")
+      .toLowerCase();
+
+    return matchesDisease && haystack.includes(q);
+  });
+}

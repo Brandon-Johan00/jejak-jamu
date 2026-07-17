@@ -1,32 +1,48 @@
-import React from 'react';
-import { 
-  StyleSheet, 
-  Text, 
-  View, 
-  TouchableOpacity, 
-  Image, 
-  ImageBackground, 
+import React, { useMemo } from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+  ImageBackground,
   ScrollView,
   SafeAreaView
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
+import { getAllIngredients } from '../../utils/ingredients';
+import { getAllRecipes } from '../../utils/recipes';
 
-const plantsData = [
-  { id: '1', name: 'Kunyit', effect: 'Anti-inflamasi alami', image: 'https://images.alodokter.com/dk0z4ums3/image/upload/v1777014325/attached_image/kunyit.jpg' },
-  { id: '2', name: 'Jahe Merah', effect: 'Meningkatkan imun', image: 'https://images.alodokter.com/dk0z4ums3/image/upload/v1777014325/attached_image/jahe.jpg' },
-  { id: '3', name: 'Serai', effect: 'Detoksifikasi tubuh', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7jJtrATmBInjcz8ibeRFLD01L-OSlMjEeiWXIAbmIww&s' },
-  { id: '4', name: 'Temulawak', effect: 'Kesehatan pencernaan', image: 'https://images.alodokter.com/dk0z4ums3/image/upload/v1777014325/attached_image/temulawak.jpg' },
-];
+// Tanaman & resep yang ditonjolkan di Home. Ganti id di sini kalau mau
+// menonjolkan tanaman/resep lain — datanya tetap diambil langsung dari
+// data/ingredient.json dan data/recipes.json.
+const FEATURED_INGREDIENT_IDS = ['kunyit', 'jahe', 'serai', 'temulawak'];
+const FEATURED_RECIPE_IDS = ['beras-kencur', 'kunyit-asam', 'wedang-jahe'];
 
-const recipesData = [
-  { id: '1', title: 'Beras Kencur Vitalitas', subtitle: 'Menghilangkan lelah & pegal linu', icon: 'lightning-bolt', bgColor: '#dcfce7', iconColor: '#16a34a' },
-  { id: '2', title: 'Kunyit Asam Segar', subtitle: 'Detoks alami & mencerahkan kulit', icon: 'flower-tulip-outline', bgColor: '#ffedd5', iconColor: '#c2410c' },
-  { id: '3', title: 'Teh Jahe Serai Tidur Nyenyak', subtitle: 'Menenangkan pikiran & menghangatkan', icon: 'moon-waning-crescent', bgColor: '#dcfce7', iconColor: '#16a34a' },
+// Preset ikon/warna untuk kartu resep populer, dipakai bergantian.
+const RECIPE_CARD_PRESETS = [
+  { icon: 'lightning-bolt', bgColor: '#dcfce7', iconColor: '#16a34a' },
+  { icon: 'flower-tulip-outline', bgColor: '#ffedd5', iconColor: '#c2410c' },
+  { icon: 'moon-waning-crescent', bgColor: '#dcfce7', iconColor: '#16a34a' },
 ];
 
 export default function Home() {
   const router = useRouter();
+
+  const featuredIngredients = useMemo(() => {
+    const all = getAllIngredients();
+    return FEATURED_INGREDIENT_IDS
+      .map((id) => all.find((item) => item.id === id))
+      .filter(Boolean);
+  }, []);
+
+  const featuredRecipes = useMemo(() => {
+    const all = getAllRecipes();
+    return FEATURED_RECIPE_IDS
+      .map((id) => all.find((item) => item.id === id))
+      .filter(Boolean);
+  }, []);
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -34,31 +50,28 @@ export default function Home() {
 
         <View style={styles.header}>
           <View style={styles.headerLeft}>
-            {/* <TouchableOpacity>
-              <Feather name="menu" size={24} color="#1f2937" />
-            </TouchableOpacity> */}
             <Text style={styles.headerTitle}>Jejak Jamu</Text>
           </View>
-          <TouchableOpacity>
-            <Image 
-              source={{ uri: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80' }} 
-              style={styles.avatar} 
+          <TouchableOpacity onPress={() => router.push('/(tabs)/profile')}>
+            <Image
+              source={{ uri: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80' }}
+              style={styles.avatar}
             />
           </TouchableOpacity>
         </View>
 
-        <ImageBackground 
+        <ImageBackground
           source={{ uri: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80' }}
           style={styles.heroCardContainer}
-          imageStyle={{ borderRadius: 32 }} 
+          imageStyle={{ borderRadius: 32 }}
         >
           <View style={styles.overlay}>
             <Text style={styles.cardTitle}>Temukan Rahasia Alam Indonesia.</Text>
             <Text style={styles.cardSubtitle}>
               Eksplorasi ribuan tahun tradisi jamu yang kini hadir untuk kesehatan modern Anda.
             </Text>
-            
-            <TouchableOpacity 
+
+            <TouchableOpacity
               style={styles.heroButton}
               onPress={() => router.push('/scan')}
             >
@@ -73,40 +86,53 @@ export default function Home() {
             <Text style={styles.sectionLabel}>KOLEKSI TERPILIH</Text>
             <Text style={styles.sectionTitle}>Tanaman Unggulan</Text>
           </View>
-          <TouchableOpacity style={styles.seeAllButton}>
+          <TouchableOpacity style={styles.seeAllButton} onPress={() => router.push('/(tabs)/profile')}>
             <Text style={styles.seeAllText}>Lihat Semua</Text>
             <Feather name="arrow-right" size={16} color="#b45309" />
           </TouchableOpacity>
         </View>
 
         <View style={styles.gridContainer}>
-          {plantsData.map((plant) => (
-            <TouchableOpacity key={plant.id} style={styles.gridItem}>
+          {featuredIngredients.map((plant) => (
+            <TouchableOpacity
+              key={plant.id}
+              style={styles.gridItem}
+              activeOpacity={0.85}
+              onPress={() => router.push(`/ingredient/${plant.id}`)}
+            >
               <Image source={{ uri: plant.image }} style={styles.gridImage} />
               <Text style={styles.gridTitle}>{plant.name}</Text>
-              <Text style={styles.gridSubtitle}>{plant.effect}</Text>
+              <Text style={styles.gridSubtitle}>{plant.spotlightTitle}</Text>
             </TouchableOpacity>
           ))}
         </View>
 
-       
+
         <Text style={[styles.sectionTitle, styles.recipeTitle]}>Resep Jamu Populer</Text>
-        
+
         <View style={styles.recipeList}>
-          {recipesData.map((recipe) => (
-            <TouchableOpacity key={recipe.id} style={styles.recipeItem}>
-              <View style={[styles.recipeIconContainer, { backgroundColor: recipe.bgColor }]}>
-                <MaterialCommunityIcons name={recipe.icon} size={22} color={recipe.iconColor} />
-              </View>
-              
-              <View style={styles.recipeTextContainer}>
-                <Text style={styles.recipeItemTitle}>{recipe.title}</Text>
-                <Text style={styles.recipeItemSubtitle}>{recipe.subtitle}</Text>
-              </View>
-              
-              <Feather name="chevron-right" size={20} color="#94a3b8" />
-            </TouchableOpacity>
-          ))}
+          {featuredRecipes.map((recipe, index) => {
+            const preset = RECIPE_CARD_PRESETS[index % RECIPE_CARD_PRESETS.length];
+            return (
+              <TouchableOpacity
+                key={recipe.id}
+                style={styles.recipeItem}
+                activeOpacity={0.85}
+                onPress={() => router.push(`/recipe/${recipe.id}`)}
+              >
+                <View style={[styles.recipeIconContainer, { backgroundColor: preset.bgColor }]}>
+                  <MaterialCommunityIcons name={preset.icon} size={22} color={preset.iconColor} />
+                </View>
+
+                <View style={styles.recipeTextContainer}>
+                  <Text style={styles.recipeItemTitle}>{recipe.name}</Text>
+                  <Text style={styles.recipeItemSubtitle}>{recipe.description}</Text>
+                </View>
+
+                <Feather name="chevron-right" size={20} color="#94a3b8" />
+              </TouchableOpacity>
+            );
+          })}
         </View>
 
       </ScrollView>
@@ -139,7 +165,7 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#b45309', 
+    color: '#b45309',
   },
   avatar: {
     width: 40,
@@ -149,15 +175,15 @@ const styles = StyleSheet.create({
 
   heroCardContainer: {
     width: '100%',
-    height: 380, 
-    borderRadius: 32, 
+    height: 380,
+    borderRadius: 32,
     marginBottom: 32,
   },
   overlay: {
     flex: 1,
     backgroundColor: 'rgba(0, 0, 0, 0.35)',
-    justifyContent: 'flex-end', 
-    padding: 24, 
+    justifyContent: 'flex-end',
+    padding: 24,
     borderRadius: 32,
   },
   cardTitle: {
@@ -178,13 +204,13 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     paddingHorizontal: 24,
     backgroundColor: '#d97736',
-    borderRadius: 9999, 
+    borderRadius: 9999,
     alignItems: 'center',
     justifyContent: 'center',
-    alignSelf: 'flex-start', 
+    alignSelf: 'flex-start',
   },
   heroButtonText: {
-    color: '#78350f', 
+    color: '#78350f',
     fontSize: 16,
     fontWeight: 'bold',
   },
@@ -224,7 +250,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   gridItem: {
-    width: '48%', 
+    width: '48%',
     marginBottom: 24,
   },
   gridImage: {
@@ -249,7 +275,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   recipeList: {
-    gap: 20, 
+    gap: 20,
   },
   recipeItem: {
     flexDirection: 'row',
