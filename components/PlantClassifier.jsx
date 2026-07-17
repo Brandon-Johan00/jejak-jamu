@@ -22,7 +22,7 @@ const classifierHtml = `
   </head>
   <body>
     <script>
-      const MODEL_URL = "${MODEL_URL}";
+      const MODEL_URL = "https://teachablemachine.withgoogle.com/models/6WCSEZfyl/";
       let model = null;
 
       function post(payload) {

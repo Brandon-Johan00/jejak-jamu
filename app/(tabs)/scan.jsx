@@ -68,17 +68,20 @@ export default function ScanScreen() {
   async function processImage(asset) {
     setImageUri(asset.uri);
 
-    // KUNCI: Kalau AI belum disetting, kita biarkan saja user mengambil foto tanpa memprosesnya ke AI
+    // Kalau AI WebView-nya belum siap/error, hentikan proses
     if (!modelReady) {
-      alert("📸 Foto berhasil dijepret!\n(AI belum disetting, klasifikasi dilewati)");
+      alert("AI belum siap. Tunggu indikator berubah menjadi AI READY.");
       return;
     }
 
     setLoading(true);
-    setStatusText("Mengidentifikasi tanaman...");
+    setStatusText("Menganalisa gambar...");
 
     try {
+      // Teachable Machine via WebView membutuhkan prefix ini
       const base64Image = `data:image/jpeg;base64,${asset.base64}`;
+      
+      // Panggil fungsi classify dari ref PlantClassifier
       const predictions = await classifierRef.current?.classify(base64Image);
 
       if (!predictions || predictions.length === 0) {
@@ -86,13 +89,16 @@ export default function ScanScreen() {
         return;
       }
 
+      // Ambil hasil dengan persentase tertinggi
       const top = predictions[0];
 
+      // Cek apakah persentasenya melebihi batas minimal (0.6 / 60%)
       if (top.probability < CONFIDENCE_THRESHOLD) {
-        alert(`Kurang yakin (${Math.round(top.probability * 100)}%). Coba foto yang lebih jelas.`);
+        alert(`Kurang yakin (${Math.round(top.probability * 100)}%). Coba foto yang lebih jelas dari jarak dekat.`);
         return;
       }
 
+      // Ubah nama class dari Teachable Machine menjadi ID plant
       const plantId = resolvePlantId(top.className);
 
       if (!plantId) {
@@ -100,9 +106,12 @@ export default function ScanScreen() {
         return;
       }
 
+      // Pindah ke halaman detail menggunakan ID tersebut
       router.push(`/detail/${plantId}`);
+      
     } catch (error) {
-      alert("Terjadi kesalahan saat klasifikasi.");
+      console.error("Classification error:", error);
+      alert("Terjadi kesalahan saat mengklasifikasi gambar.");
     } finally {
       setLoading(false);
     }
@@ -166,7 +175,7 @@ export default function ScanScreen() {
               style={[styles.shutterButtonOuter, loading && { opacity: 0.5 }]}
               activeOpacity={0.7}
               onPress={takePicture}
-              disabled={loading || imageUri} 
+              disabled={loading || !!imageUri} // <-- PERBAIKANNYA DI SINI
             >
               <View style={styles.shutterButtonInner} />
             </TouchableOpacity>

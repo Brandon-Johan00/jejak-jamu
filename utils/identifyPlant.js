@@ -4,9 +4,9 @@
  * di data/plants.json.
  */
 const CLASS_TO_PLANT_ID = {
-  Kunyit: "kunyit",
-  Jahe: "jahe",
-  Temulawak: "temulawak",
+  kunyit: "kunyit",
+  jahe: "jahe",
+  temulawak: "temulawak",
 };
 
 // Prediksi di bawah confidence ini dianggap "tidak yakin"
