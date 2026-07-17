@@ -1,0 +1,108 @@
+[
+  {
+    "id": "kunyit-asam",
+    "plantId": "kunyit",
+    "name": "Jamu Kunyit Asam",
+    "description": "Resep jamu paling populer di Indonesia — segar, asam, dan sedikit pedas dari kunyit.",
+    "benefits": ["Membantu detoksifikasi", "Meredakan nyeri haid", "Meningkatkan imun"],
+    "servings": 4,
+    "prepTimeMinutes": 15,
+    "ingredients": [
+      { "id": "0001", "name": "kunyit segar, diparut", "amount": 150, "unit": "g" },
+      { "id": "0002", "name": "asam jawa", "amount": 50, "unit": "g" },
+      { "id": "0003", "name": "gula aren, sisir halus", "amount": 100, "unit": "g" },
+      { "id": "0004", "name": "air", "amount": 1000, "unit": "ml" },
+      { "id": "0005", "name": "garam" },
+      { "id": "0006", "name": "jeruk nipis, peras" }
+    ],
+    "steps": [
+      {
+        "id": "1",
+        "title": "Rebus kunyit",
+        "content": "Rebus {0004} bersama kunyit parut ({0001}) hingga mendidih dan air berubah kuning pekat.",
+        "timerSeconds": 600
+      },
+      {
+        "id": "2",
+        "title": "Tambahkan asam dan gula",
+        "content": "Masukkan {0002} dan {0003}, aduk hingga gula larut sempurna.",
+        "timerSeconds": 300
+      },
+      {
+        "id": "3",
+        "title": "Saring dan sajikan",
+        "content": "Saring larutan, tambahkan sejumput {0005} dan perasan {0006}. Sajikan hangat atau dingin dengan es."
+      }
+    ]
+  },
+  {
+    "id": "wedang-jahe",
+    "plantId": "jahe",
+    "name": "Wedang Jahe",
+    "description": "Minuman jahe hangat klasik, cocok diminum saat cuaca dingin atau badan kurang fit.",
+    "benefits": ["Menghangatkan tubuh", "Meredakan mual", "Membantu pencernaan"],
+    "servings": 2,
+    "prepTimeMinutes": 10,
+    "ingredients": [
+      { "id": "0001", "name": "jahe, digeprek", "amount": 50, "unit": "g" },
+      { "id": "0002", "name": "gula merah, sisir halus", "amount": 40, "unit": "g" },
+      { "id": "0003", "name": "serai, digeprek" },
+      { "id": "0004", "name": "air", "amount": 500, "unit": "ml" },
+      { "id": "0005", "name": "daun pandan" }
+    ],
+    "steps": [
+      {
+        "id": "1",
+        "title": "Rebus semua bahan",
+        "content": "Rebus {0004} bersama {0001}, {0003}, dan {0005} hingga mendidih dan aroma jahe keluar.",
+        "timerSeconds": 480
+      },
+      {
+        "id": "2",
+        "title": "Tambahkan gula",
+        "content": "Masukkan {0002}, aduk hingga larut. Kecilkan api dan biarkan mendidih pelan 2-3 menit lagi.",
+        "timerSeconds": 180
+      },
+      {
+        "id": "3",
+        "title": "Saring dan sajikan",
+        "content": "Saring, tuang ke gelas, sajikan selagi hangat."
+      }
+    ]
+  },
+  {
+    "id": "jamu-temulawak",
+    "plantId": "temulawak",
+    "name": "Jamu Temulawak",
+    "description": "Jamu pahit-manis yang dipercaya baik untuk menjaga kesehatan hati dan menambah nafsu makan.",
+    "benefits": ["Menjaga kesehatan hati", "Meningkatkan nafsu makan", "Membantu pencernaan"],
+    "servings": 4,
+    "prepTimeMinutes": 20,
+    "ingredients": [
+      { "id": "0001", "name": "temulawak, diiris tipis", "amount": 100, "unit": "g" },
+      { "id": "0002", "name": "gula aren, sisir halus", "amount": 80, "unit": "g" },
+      { "id": "0003", "name": "daun pandan" },
+      { "id": "0004", "name": "air", "amount": 1000, "unit": "ml" },
+      { "id": "0005", "name": "asam jawa", "amount": 20, "unit": "g" }
+    ],
+    "steps": [
+      {
+        "id": "1",
+        "title": "Rebus temulawak",
+        "content": "Rebus {0004} bersama irisan temulawak ({0001}) dan {0003} hingga mendidih dan wangi.",
+        "timerSeconds": 900
+      },
+      {
+        "id": "2",
+        "title": "Tambahkan pemanis",
+        "content": "Masukkan {0002} dan {0005}, aduk hingga larut, masak 5 menit lagi.",
+        "timerSeconds": 300
+      },
+      {
+        "id": "3",
+        "title": "Saring dan sajikan",
+        "content": "Saring, sajikan hangat. Bisa juga didinginkan dan disajikan dengan es."
+      }
+    ]
+  }
+]
